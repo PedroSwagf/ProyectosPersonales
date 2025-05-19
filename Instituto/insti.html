@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto</title>
+</head>
+<body>
+    <h1>Creacion de personas en el Instituto</h1>
+    <form action="instituto.php" method="post">
+        <label for="tipo">Tipo de persona:</label>
+        <select name="tipo" id="tipo">
+            <option value="">Seleccione una opcion</option>
+            <option value="Administrativo">Administrativo</option>
+            <option value="Conserje">Conserje</option>
+            <option value="P.Limpieza">P.Limpieza</option>
+            <option value="Profesorado">Profesorado</option>
+            <option value="Alumno ESO">Alumno ESO</option>
+            <option value="Alumno Bachillerato">Alumno Bachillerato</option>
+            <option value="Alumno FP">Alumno FP</option>
+        </select>
+        <br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required>
+        <br>
+        <label for="apellido1">Primer apellido:</label>
+        <input type="text" name="apellido1" id="apellido1" required>
+        <br>
+        <label for="apellido2">Segundo apellido:</label>
+        <input type="text" name="apellido2" id="apellido2" required>
+        <br>
+        <label for="dni">Documento de identificacion:</label>
+        <input type="text" name="dni" id="dni" required>
+        <br>
+        <label for="telefono">Telefono:</label>
+        <input type="" name="telefono" id="telefono" required>
+        <br>
+        <label for="direccion">Direccion:</label>
+        <input type="text" name="direccion" id="direccion" required>
+        <br>
+        <label for="sexo">Sexo:</label>
+        <select name="sexo" id="sexo">
+            <option value="">Selecciona una opcion</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="bisexual">Bisexual</option>
+        </select>
+        <br><br><br> 
+        <h3> Solo para: Administrativos,Conserjes,Limpieza,Profesorado</h3>  
+        <label for="tiempoServicio"> Años de servicio:</label>
+        <input type="number" name="tiempoServicio" id="tiempoServicio">
+        <br><br><br>
+        <h3>Solo Profesorado</h3>
+        <label for="cargoProfesorado">¿Que cargo desempeñaste?:</label>
+        <select name="cargoProfesorado" id="cargoProfesorado">
+            <option value="ninguno">ninguno</option>
+            <option value="direccion">Direccion</option>
+            <option value="secretariado">Secretariado</option>
+            <option value="jefaturaDiurno">Jefatura estudios diurno</option>
+            <option value="jefaturaNocturno">Jefatura estudios nocturnos</option>
+            <option value="vicedireccion">Vicedirrecion</option>
+        </select><br><br>
+        <label for="materias">¿Que materias impartes?:</label>
+        <select name="materias" id="materias">
+            <option value="matematicas">matematicas</option>
+            <option value="fisica">fisica</option>
+            <option value="quimica">quimica</option>
+            <option value="lenguas">lenguas</option>
+            <option value="electricidad">electricidad</option>
+            <option value="robotica">robotica</option>
+        </select>
+        <br>
+        <h3>Solo para alumnos de ESO y Bachillerato</h3>
+        <label for="curso">Curso:</label>
+        <input type="text" name="curso" id="curso">
+        <br><br>
+        <label for="grupo">Grupo:</label>
+        <input type="text" name="grupo" id="grupo">
+        <h3>Solo para Alumnos  de FP</h3>
+        <label for="cicloFormativo">Ciclo Formativo</label>
+        <input type="text" name="cicloFormativo" id="cicloFormativo">        
+        <label for="curso">Curso:</label>
+        <input type="text" name="curso" id="curso">
+        <label for="grupo">Grupo:</label>
+        <input type="text" name="grupo" id="grupo">
+        <br><br><br>
+        <input type="submit">
+    </form>
+    <table>
+        
+    </table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+body {
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.titulo {
+    text-align: center;
+    color: white;
+}
+
+footer {
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    text-align: center;
+    font-size: larger;
+}
+
+h1 {
+    text-align: center;
+    
+}
+th,td {
+    text-align: center;
+}
+
+strong,p {
+    color: white;
+}
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta de Alumno DAW</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: Arial, sans-serif;
+        }
+    
+        main {
+            width: 100%;
+            max-width: 600px; 
+            padding: 20px;
+            background-color: #d02e2e;
+            border-radius: 10px;
+        }
+    
+        form {
+            display: flex;
+            flex-direction: column; 
+        }
+    
+        form label, form input, form textarea {
+            margin-bottom: 10px;
+        }
+
+        legend {
+            text-align: center;
+            color: white;
+        }
+
+        fieldset {
+            margin-top: 10px;
+        }
+
+        button {
+            border-radius: 30px;
+            margin-top: 30px;
+            background-color: aqua;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>Formulario de Alta de Alumno en el Ciclo de DAW</h1>
+        <p>Completa la informacion para inscribir al alumno en el ciclo formativo.</p>
+    </header>
+
+    <main>
+        <form action="aqui iria el archivo que procesa el formulario" method="post" >
+            <!-- Datos Personales: Se agrupan los campos que identifican al alumno de manera individual, 
+             como nombre, apellidos y DNI.-->
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required><br>
+
+                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
+
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" required><br>
+
+                <label for="telefono">Telefono:</label>
+                <input type="tel" id="telefono" name="telefono" required><br>
+            </fieldset>
+
+            <!--Contacto y Residencia: Se agrupan datos relacionados con la ubicacion y 
+            las de residencia del alumno.-->
+            <fieldset>
+                <legend>Contacto y Residencia</legend>
+                <label for="direccion">Direccion:</label>
+                <input type="text" id="direccion" name="direccion" required><br>
+
+                <label for="provincia">Provincia:</label>
+                <input type="text" id="provincia" name="provincia" required><br>
+
+                <label for="codigo_postal">Codigo Postal:</label>
+                <input type="text" id="codigo_postal" name="codigo_postal" required><br>
+
+                <label for="alquiler_residencia">¿Alquiler o Residencia?</label>
+                <input type="text" id="alquiler_residencia" name="alquiler_residencia"><br>
+
+                <label for="direccion_alquiler">Direccion Alquiler (si aplica):</label>
+                <input type="text" id="direccion_alquiler" name="direccion_alquiler"><br>
+
+                <label for="precio_alquiler">Precio del Alquiler (si aplica):</label>
+                <input type="number" id="precio_alquiler" name="precio_alquiler" step="0.01"><br>
+            </fieldset>
+
+            <!--Acceso y Estudios: Informacion relevante al ciclo formativo, 
+            incluyendo titulación y asignaturas.-->
+            <fieldset>
+                <legend>Acceso y Estudios</legend>
+                <label for="titulacion_acceso">Titulación de Acceso:</label>
+                <input type="text" id="titulacion_acceso" name="titulacion_acceso" required><br>
+
+                <label for="nota_acceso">Nota de Acceso:</label>
+                <input type="number" id="nota_acceso" name="nota_acceso" step="0.01" required><br>
+
+                <label for="asignaturas">Asignaturas:</label>
+                <textarea id="asignaturas" name="asignaturas" rows="4" cols="50"></textarea><br>
+            </fieldset>
+
+            <!--Información Familiar: Se solicita informacion de los padres como contacto en caso de emergencia.-->
+            <fieldset>
+                <legend>Información Familiar</legend>
+                <label for="nombre_padre">Nombre del Padre:</label>
+                <input type="text" id="nombre_padre" name="nombre_padre"><br>
+
+                <label for="nombre_madre">Nombre de la Madre:</label>
+                <input type="text" id="nombre_madre" name="nombre_madre"><br>
+            </fieldset>
+
+            <!-- Detalles Adicionales: Datos adicionales como beca y correo.-->
+            <fieldset>
+                <legend>Detalles Adicionales</legend>
+                <label for="beca">¿Beca? (S/N):</label>
+                <input type="text" id="beca" name="beca" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+            </fieldset>
+
+            <button type="submit">Dar de alta al alumno</button>
+        </form>
+    </main>
+
+    <footer>
+        <p align="center">Centro de Formación DAW - Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

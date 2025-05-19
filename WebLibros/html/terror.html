@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Encabezado: Incluye la configuracion inicial de la pagina como el titulo y el enlace al CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>TerrorLand</title>
+</head>
+<body>
+    <!-- Header: Titulo principal del sitio -->
+    <header>
+        <h1>TerrorLand</h1>
+    </header>
+
+    <!-- Contenedor principal: Incluye el menu de navegacion, barra de busqueda y perfil de usuario -->
+    <div class="container">
+        <!-- Barra de navegacion -->
+        <section class="navbar">
+            <nav>
+                <a href="">Inicio</a>
+                <a href="#proyecciones">Contenido</a>
+                <a href="#popup" class="open-popup">Contacto</a>
+                <div id="popup" class="popup-container">
+                    <!-- Ventana emergente para formulario de contacto -->
+                    <div class="popup-content">
+                        <a href="#" class="close-button">&times;</a>
+                        <h2 class="tituloformulario">Formulario de Contacto</h2>
+                        <form>
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" name="name" required>
+                
+                            <label for="email">Correo Electronico:</label>
+                            <input type="email" id="email" name="email" required>
+                
+                            <label for="message">Mensaje:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </section>
+        <!-- Barra de busqueda -->
+        <section class="barraBuscar">
+            <fieldset>
+                <input type="text" class="search-bar" placeholder="Buscar...">
+            </fieldset>
+        </section>
+        <!-- Perfil de usuario -->
+        <section class="perfil">
+            <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
+            <label for="dropdown-toggle" class="profile">
+                <img src="../images/user-logo.webp" alt="User Logo" class="profile-logo">
+                <span class="profile-name"></span>
+                <span class="dropdown-icon">▼</span>
+            </label>
+            <ul class="dropdown-menu">
+                <li><a href="#">Perfil</a></li>
+                <li><a href="#">Configuracion</a></li>
+                <li><a href="#">Cerrar Sesion</a></li>
+            </ul>
+        </section>
+    </div>
+    <main>
+        <!-- Carrusel: Parte superior de la pagina -->
+        <div class="carousel">
+            <input type="radio" name="carousel" id="item-1" class="carousel-radio" checked>
+            <input type="radio" name="carousel" id="item-2" class="carousel-radio">
+            <input type="radio" name="carousel" id="item-3" class="carousel-radio">
+            <input type="radio" name="carousel" id="item-4" class="carousel-radio">
+            <input type="radio" name="carousel" id="item-5" class="carousel-radio">
+            <input type="radio" name="carousel" id="item-6" class="carousel-radio">
+            <input type="radio" name="carousel" id="item-7" class="carousel-radio">
+    
+            <div class="carousel-track">
+                <img src="../images/conjuro1.jpg" alt="conjuro">
+                <img src="../images/elvisitante.jpg" alt="visitante">
+                <img src="../images/cuentos de terror.jpg" alt="cuentos terror">
+                <img src="../images/dejameEntrerar.webp" alt="dejameEntrar">
+                <img src="../images/dracula.jpg" alt="dracula">
+                <img src="../images/morador.jpg" alt="morador">
+                <img src="../images/10cuentos.jpg" alt="diezCuentos">
+            </div>
+        </div>
+        <!-- Contenido principal: Texto animado y curiosidades -->
+        <div class="contenido-principal">
+            <!-- Texto animado -->
+            <section class="textoAnimado">
+                <section id="historia">
+                    <h2 class="animacionText">El misterio de la Casa Abandonada</h2>
+                    <p class="histoAnimada">
+                        Cuenta la leyenda que, en un pueblo lejano, existía una casa que nadie osaba visitar. Situada en lo alto de una colina sombría, su silueta destacaba incluso en las noches más oscuras. Los aldeanos la llamaban "La Casa del Eco", porque se decía que, al caer la noche, los susurros y gemidos de quienes habían osado cruzar su umbral resonaban desde sus paredes como un eco macabro.
+                        nadie recordaba con exactitud cómo o cuándo fue construida, pero los más ancianos del pueblo contaban historias de luces que brillaban en sus ventanas cuando no había nadie dentro, de sombras que se movían en los pasillos aun con las puertas cerradas. Algunos aseguraban haber visto figuras extrañas en los alrededores, como si la casa atrajera a quienes ya no pertenecían a este mundo.A pesar de las advertencias, los curiosos nunca faltaban. Cada tanto, algún viajero desconocido o algún joven valiente del pueblo decidía desafiar las historias. Entraban con valentía y burla, pero jamás se les veía regresar. Pronto, el miedo al lugar se transformó en una regla no escrita: la colina y su casa eran un territorio prohibido.
+                    </p>
+                    <img src="../images/casamisterio.webp" alt="casamisterio" class="img-casamiste">
+                </section>
+            </section>
+            <!-- Curiosidades -->
+                <aside>
+                    <h3>Curiosidades</h3>
+                    <ul>
+                        <li>¿Sabias que la mayoria de estas historias tienen entre 50 y 100 años?</li>
+                        <li>El conjuro inspiro una pelicula basada en hechos reales de los Expedientes Warren.</li>
+                    </ul><br>
+                    <h3>Películas Expediente Warren: en qué orden verlas</h3><br>
+                    <ol>
+                        <li>'La monja' (Corin Hardy, 2018)</li><br>
+                        <li>'Annabelle: Creation' (David F. Sandberg, 2017)</li><br>
+                        <li>'La monja II' (Michael Chaves, 2023)</li><br>
+                        <li>'Annabelle' (John R. Leonetti, 2014)</li><br>
+                        <li>'Expediente Warren: The Conjuring' (James Wan, 2013)</li><br>
+                        <li>'Annabelle vuelve a casa' (Gary Dauberman, 2019)</li><br>
+                        <li>'La Llorona' (Michael Chaves, 2019)</li><br>
+                        <li>'Expediente Warren: El caso Enfield' (James Wan, 2016)</li><br>
+                        <li>'Expediente Warren: Obligado por el demonio' (Michael Chaves, 2021)</li><br>
+                    </ol>
+                </aside>
+        </div>
+    </main>
+    
+    <!-- Tabla con horarios de proyecciones -->
+    <section id="proyecciones">
+        <h2 class="letrasEfectos">Horario de Proyecciones</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Historia</th>
+                    <th>Dia</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>La Casa Abandonada</td>
+                    <td>Lunes</td>
+                    <td>18:00</td>
+                </tr>
+                <tr>
+                    <td>El Bosque Maldito</td>
+                    <td>Miercoles</td>
+                    <td>20:00</td>
+                </tr>
+                <tr>
+                    <td>El Ultimo Tren</td>
+                    <td>Viernes</td>
+                    <td>22:00</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <!-- Footer -->
+    <footer id="footer">
+        <div>
+            <section class="social-media">
+                <h3>Redes Sociales</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </section>
+        </div>
+        <div>
+            <section class="copyright">
+                <p>&copy; 2024 TerrorLand. Todos los derechos reservados.</p>
+            </section>
+        </div>
+        <div>
+            <section class="contact">
+                <h3 style="text-align: center;">Contacto</h3>
+                <p>Email: contacto@terroland.com</p>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>

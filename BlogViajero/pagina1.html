@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Viajes - Blog del Viajero</title>
+    <link rel="stylesheet" href="blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Mis Viajes</h1>
+    <p>Explora los lugares que he visitado</p>
+</header>
+
+<svg viewBox="0 0 600 100" width="100%" height="100">
+    <defs>
+        <linearGradient id="gradientText" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="red"/>
+            <stop offset="100%" stop-color="yellow"/>
+        </linearGradient>
+    </defs>
+    <text x="50%" y="50%" font-size="50" fill="url(#gradientText)" text-anchor="middle" dominant-baseline="middle" class="stroke-animation">
+        Vive la Aventura
+    </text>
+</svg>
+
+<main>
+    <section class="gallery">
+        <h2 class="tituloViajes">Bienvenidos a mis viajes</h2>
+        <div class="photo">
+            <img src="imagenes/machu-picchu.jpg" alt="Machu Picchu" onclick="showPopup('Machu Picchu, Perú - Una experiencia mágica en las alturas de los Andes.')">
+            <img src="imagenes/gran-muralla.jpg" alt="Gran Muralla" onclick="showPopup('Gran Muralla, China - Una maravilla arquitectónica cargada de historia.')">
+            <img src="imagenes/serengeti.jpg" alt="Safari en el Serengeti" onclick="showPopup('Safari en el Serengeti, Tanzania - La majestuosidad de la fauna salvaje.')">
+            <img src="imagenes/paris.jpg" alt="París" onclick="showPopup('París, Francia - La ciudad del amor y la Torre Eiffel.')">
+            <img src="imagenes/urulu.jpg" alt="Uluru" onclick="showPopup('Uluru, Australia - La mística roca roja en el corazón del desierto.')">
+        </div>
+    </section>
+</main>
+<div style="text-align: center; margin: 20px;">
+    <button class="btn-secondary" onclick="toggleDaltonicMode()">Modo daltónico</button>
+    <button class="btn-primary" onclick="changeFontSize(1)">Aumentar texto</button>
+    <button onclick="changeFontSize(-1)">Disminuir texto</button>
+</div>
+<footer>
+    <p>&copy; 2024 Blog del Viajero. Todos los derechos reservados.</p>
+    <a href="index.html">Volver a la página principal</a>
+</footer>
+</body>
+<script>
+    function toggleDaltonicMode() {
+        document.body.classList.toggle('daltonic-mode');
+
+        // Aplica la clase a otros elementos clave
+        const elements = document.querySelectorAll('header, footer, a, button, .LsPresentacion, .photo img');
+        elements.forEach(element => {
+            element.classList.toggle('daltonic-mode');
+        });
+    }
+
+    let currentFontSize = 16; // Tamaño de fuente inicial
+
+    function changeFontSize(step) {
+        currentFontSize += step;
+        document.documentElement.style.fontSize = `${currentFontSize}px`;
+    }
+
+        let activePopup = null; // Variable para guardar el popup activo
+        let activeText = ""; // Variable para guardar el texto actual del popup
+
+        function showPopup(text) {
+            // Si ya hay un popup abierto
+            if (activePopup) {
+                // Si el mismo texto está siendo clicado, simplemente cerramos el popup
+                if (activeText === text) {
+                    closePopup();
+                    return;
+                }
+                // Si el texto es diferente, cerramos el popup actual antes de abrir uno nuevo
+                closePopup();
+            }
+
+            // Crear el nuevo popup
+            const popup = document.createElement('div');
+            popup.style.position = 'fixed';
+            popup.style.top = '50%';
+            popup.style.left = '50%';
+            popup.style.transform = 'translate(-50%, -50%)';
+            popup.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            popup.style.color = 'white';
+            popup.style.padding = '20px';
+            popup.style.borderRadius = '10px';
+            popup.style.zIndex = '1000';
+            popup.style.textAlign = 'center';
+            popup.style.maxWidth = '80%';
+
+            // Añadir texto
+            popup.innerHTML = `
+                <p>${text}</p>
+                <button onclick="closePopup()" style="margin-top: 10px; background-color: red; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Cerrar</button>
+            `;
+
+            // Agregar el popup al documento
+            document.body.appendChild(popup);
+            activePopup = popup; // Guardar el popup actual como activo
+            activeText = text; // Guardar el texto actual del popup
+        }
+
+        function closePopup() {
+            // Si hay un popup activo, lo eliminamos
+            if (activePopup) {
+                document.body.removeChild(activePopup);
+                activePopup = null;
+                activeText = ""; // Resetear el texto actual
+            }
+        }
+</script>
+</html>

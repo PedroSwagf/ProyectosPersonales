@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog del Viajero</title>
+    <link rel="stylesheet" href="blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Hora De Aventura</h1>
+    <p>Haz del mundo tu hogar, y de los viajes, tu vida.</p>
+</header>
+
+<!-- Texto SVG animado mejorado -->
+<section class="svg-container">
+    <svg viewBox="0 0 500 100" width="100%" height="100">
+        <path id="text-path" d="M10,50 Q250,10 490,50" fill="transparent" stroke="black" stroke-width="2"></path>
+        <text font-size="35" fill="orange">
+            <textPath href="#text-path" startOffset="0%">
+                ¡Explora el mundo con nosotros!
+            </textPath>
+        </text>
+        <animate xlink:href="#text-path" attributeName="d" values="M10,50 Q250,10 490,50; M10,50 Q250,90 490,50; M10,50 Q250,10 490,50" dur="3s" repeatCount="indefinite"/>
+        <animate xlink:href="#text-path" attributeName="stroke-dasharray" values="0,400;400,0" dur="4s" repeatCount="indefinite"/>
+    </svg>
+</section>
+
+<main>
+    <section class="up-column">
+        <div class="carousel">
+            <img src="imagenes/imagen1.jpg" alt="Imagen 1" class="main-image">
+            <img src="imagenes/imagen2.jpg" alt="Imagen 2" class="main-image">
+            <img src="imagenes/imagen3.jpg" alt="Imagen 3" class="main-image">
+            <img src="imagenes/imagen4.jpg" alt="Imagen 4" class="main-image">
+            <img src="imagenes/imagen5.jpg" alt="Imagen 5" class="main-image">
+            <img src="imagenes/imagen6.jpg" alt="Imagen 6" class="main-image">
+        </div>
+    </section>
+    <section class="down-column">
+        <h2>El blog del viajero</h2>
+        <p>Mi nombre es <b class="LsPresentacion">Pedro Fernandez</b>. 
+        Hace cinco años decidí vivir aventuras alrededor del mundo con una mochila. He visitado todos los continentes, viviendo experiencias increíbles.  
+        Por todo esto, pensé en diseñar <b class="LsPresentacion">“el blog del viajero”</b>, para que el resto de personas pudieran disfrutar de todas mis experiencias.”
+        </p>
+    </section>
+    <div>
+        <a href="pagina1.html"><button class="botonViaje">Mis viajes</button></a>
+    </div>
+</main>
+<div style="text-align: center; margin: 20px;">
+    <button class="btn-secondary" onclick="toggleDaltonicMode()">Modo daltónico</button>
+    <button class="btn-primary" onclick="changeFontSize(1)">Aumentar texto</button>
+    <button onclick="changeFontSize(-1)">Disminuir texto</button>
+</div>
+<footer>
+    <p>&copy; 2024 Blog del Viajero. Todos los derechos reservados.</p>
+</footer>
+</body>
+<script>
+    function toggleDaltonicMode() {
+        document.body.classList.toggle('daltonic-mode');
+
+        // Aplica la clase a otros elementos clave
+        const elements = document.querySelectorAll('header, footer, a, button, .LsPresentacion, .photo img');
+        elements.forEach(element => {
+            element.classList.toggle('daltonic-mode');
+        });
+    }
+
+    let currentFontSize = 16; // Tamaño de fuente inicial
+
+    function changeFontSize(step) {
+        currentFontSize += step;
+        document.documentElement.style.fontSize = `${currentFontSize}px`;
+    }
+</script>
+</html>
